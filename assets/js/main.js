@@ -2,13 +2,13 @@
 
 function converterPokemonParaLi(pokemon) {
     return `
-        <li class="pokemon">
+        <li class="pokemon ${pokemon.type}">
             <span class="numero">#${pokemon.numero}</span>
             <span class="nome">${pokemon.nome}</span>
             
             <div class="detail">
                 <ol class="types">
-                    ${pokemon.types.map((type) => `<li class="type">${type}</li>`).join('')}
+                    ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
                 </ol>
                 <img src="${pokemon.imagem}" 
                     alt=${pokemon.nome}>
