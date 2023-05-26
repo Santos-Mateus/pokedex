@@ -1,14 +1,11 @@
 
 const listaPokemon = document.getElementById('listaPokemon')
 const botaoCarregarMais = document.getElementById('botaoCarregarMais')
-const limit = 5;
+const maxRegistro = 150;
+const limit = 8;
 let offSet = 0;
 
-function carregarItensPokemons(offSet, limit){
-    function converterPokemonParaLi(pokemon) {
-        return 
-    }
-    
+function carregarItensPokemons(offSet, limit){    
     pokeApi.getPokemons(offSet, limit).then((pokemons = []) => {
         const novoHtml = pokemons.map((pokemon) => `
             <li class="pokemon ${pokemon.type}">
@@ -32,7 +29,19 @@ carregarItensPokemons(offSet, limit)
  
 botaoCarregarMais.addEventListener('click', () => {
     offSet += limit
-    carregarItensPokemons(offSet, limit)
+    
+    const qtdRegistroProximaPagina = offSet + limit
+
+    if(qtdRegistroProximaPagina > maxRegistro) {
+        const newLimit = maxRegistro - offSet
+        carregarItensPokemons(offSet, newLimit)
+
+        botaoCarregarMais.parentElement.removeChild(botaoCarregarMais)
+    } else {
+        carregarItensPokemons(offSet, limit)
+    }
+
+    
 })
 
 
