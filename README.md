@@ -8,7 +8,7 @@
 
 ## 🔖 Sobre
 
-O projeto pokedex foi criado dentro do **Bootcamp Potência Tech Angular Developer - Powered by iFood** em parceria com a **DIO**. O objetivo inicial é apresentar uma lista de pokemóns com algumas características deles utilizando uma API.
+O projeto pokedex foi criado dentro do **Bootcamp Potência Tech Angular Developer - Powered by iFood** em parceria com a **DIO**. O objetivo inicial é apresentar uma lista de pokémons com algumas características deles utilizando uma API.
 
 ---
 
